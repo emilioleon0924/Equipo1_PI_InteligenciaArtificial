@@ -1,0 +1,7 @@
+id,temperatura,clase_real
+N01,68.6,normal
+N02,78.0,posible_falla
+N03,67.9,normal
+N04,86.5,posible_falla
+N05,69.7,normal
+N06,54.4,posible_falla
