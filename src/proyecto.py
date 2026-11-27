@@ -4,6 +4,7 @@ Selección de modelos para un ensemble que detecta posibles fallas de maquinaria
 Módulos 1-4: escenario, Hill Climbing, Simulated Annealing y comparación.
 Módulos 5-9: algoritmo genético y comparación global.
 Módulo 10: CSP sobre las soluciones de HC, SA y AG.
+Módulo 11: clasificación por temperatura con discriminante lineal.
 
 Archivos: escenario.py (datos y costo), busqueda.py (HC y SA), genetico.py (AG),
 csp.py (CSP) y modelos.py (los 6 clasificadores). Este archivo contiene el menú.
@@ -20,6 +21,7 @@ from pathlib import Path
 
 from busqueda import hill_climbing, simulated_annealing
 from csp import CSPEnsemble, ejecutar_modulo_10
+from discriminante import ejecutar_modulo_11
 from escenario import (ALFA, BETA, EPS, ESTADO_INICIAL, RAIZ, SEMILLA_DATOS, Terreno,
                        dividir_datos, exactitud, generar_datos, validar_estado, vecinos,
                        vector, votacion)
@@ -380,6 +382,7 @@ MENU = [
     ("8", "Módulo 8 · AG: ciclo generacional completo y reemplazo"),
     ("9", "Módulo 9 · Comparación global definitiva (HC, SA, AG)"),
     ("10", "Módulo 10 · CSP: restricciones y factibilidad de HC, SA y AG"),
+    ("11", "Módulo 11 · Clasificación con discriminante lineal"),
     ("0", "Salir"),
 ]
 
@@ -412,6 +415,7 @@ def main():
         "8": proyecto.modulo_8,
         "9": proyecto.modulo_9,
         "10": proyecto.modulo_10,
+        "11": ejecutar_modulo_11,
     }
     if args.demo:
         for opcion in acciones:
@@ -432,7 +436,7 @@ def main():
         if opcion in acciones:
             acciones[opcion]()
         else:
-            print("Opción inválida. Escribe un número del 0 al 10.")
+            print("Opción inválida. Escribe un número del 0 al 11.")
 
 
 if __name__ == "__main__":

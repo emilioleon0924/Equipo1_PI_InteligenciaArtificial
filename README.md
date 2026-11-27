@@ -43,7 +43,7 @@ corriente.
 | 8 | Algoritmo genético: ciclo generacional completo con reemplazo de los peores |
 | 9 | Comparación global definitiva (HC, SA y AG) |
 | 10 | CSP: variables, dominios, restricciones unaria, binaria y global, y factibilidad de las soluciones de HC, SA y AG |
-| 11 | Clasificación con discriminante lineal: _pendiente_ |
+| 11 | Discriminante lineal: medias de temperatura, punto de corte y clasificación de seis casos nuevos |
 | 12 | Agrupamiento con K-medias: _pendiente_ |
 
 ## Estructura
@@ -51,12 +51,13 @@ corriente.
 ```
 Equipo1_PI_InteligenciaArtificial/
 ├── src/
-│   ├── proyecto.py      # programa principal: menú y módulos 1-10
+│   ├── proyecto.py      # programa principal: menú y módulos 1-11
 │   ├── escenario.py     # datos sintéticos, partición, votación y función de costo
 │   ├── modelos.py       # los 6 clasificadores
 │   ├── busqueda.py      # módulos 2 y 3: Hill Climbing y Simulated Annealing
 │   ├── genetico.py      # módulos 5-8: algoritmo genético
 │   ├── csp.py           # módulo 10: CSP y verificación de restricciones
+│   ├── discriminante.py # módulo 11: clasificación por temperatura
 │   └── generar_csv.py   # regenera los archivos de data/
 ├── data/
 │   ├── discriminante_entrenamiento.csv   # 10 datos por clase (módulo 11)
@@ -79,7 +80,7 @@ Desde la carpeta raíz del repositorio:
 python3 src/proyecto.py
 ```
 
-Se abre el menú; escribe el número del módulo (1 a 10) o `0` para salir. Los módulos se
+Se abre el menú; escribe el número del módulo (1 a 11) o `0` para salir. Los módulos se
 pueden ejecutar en cualquier orden: si uno necesita resultados de otro (por ejemplo, el 10
 necesita las soluciones de HC, SA y AG), el programa los calcula primero y lo indica.
 
